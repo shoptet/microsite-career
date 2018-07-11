@@ -1,0 +1,57 @@
+$fa-font-path: "../../../scaffolding/vendor/fa/webfonts";
+$claim-bg-image: url('../img/claim.png');
+$colorbox-path: "../../../scaffolding/img/colorbox/";
+
+@import "../../scaffolding/shoptet/variables-bootstrap";
+@import "../../scaffolding/vendor/bs/scss/functions";
+@import "../../scaffolding/vendor/bs/scss/variables";
+@import "../../scaffolding/vendor/bs/scss/mixins/clearfix";
+@import "../../scaffolding/shoptet/variables-shoptet";
+@import "../../scaffolding/vendor/bs/scss/mixins";
+
+@import "modules/variables";
+
+body {
+    background-color: #fff;
+}
+
+.anchor {
+    position: relative;
+    top: -80px;
+    display: block;
+}
+
+/* SECTIONS */
+.section-tertiary {
+    background-color: #f2f6de;
+}
+
+.flex-row-items {
+    display: flex;
+    justify-content: space-between;
+    > * {
+        margin: 10px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.available-position {
+    border-bottom: 1px solid $border-color;
+    padding: $spacer 0;
+
+    &:last-child {
+        border-bottom: 0;
+        padding: $spacer 0 0;
+    }
+
+    @include clearfix;
+}
+
+.entry-more {
+    float: right;
+}
