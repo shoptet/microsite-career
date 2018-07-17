@@ -1,14 +1,14 @@
 {
-  "name": "shoptet-doplnky",
+  "name": "shoptet-career",
   "version": "1.0.0",
   "author": "Shoptet s.r.o. , https://www.shoptet.cz/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shoptet/microsite-doplnky.git"
+    "url": "https://github.com/Shoptet/microsite-career.git"
   },
   "bugs": {
-    "url": "https://github.com/Shoptet/microsite-doplnky/issues"
+    "url": "https://github.com/Shoptet/microsite-career/issues"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
@@ -24,6 +24,7 @@
     "../scaffolding/vendor/bs/js/util.js",
     "../scaffolding/vendor/bs/js/dropdown.js",
     "../scaffolding/vendor/jquery.colorbox-min.js",
+    "../scaffolding/shoptet/js/shoptet.js",
     "_js/main.js"
   ]
 }

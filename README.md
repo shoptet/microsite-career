@@ -1,4 +1,4 @@
-# Shoptet "api" microsite template
+# Shoptet "design guide" microsite template
 
 ## Prerequisities
 
@@ -8,6 +8,9 @@
 ## Usage
 
 - Install latest version of Wordpress from https://wordpress.org/download/
+- `cd path_to_wordpress/wp-content/`
+- `rm -rf plugins`
+- `git clone git@github.com:Shoptet/shoptet-wp-plugins.git plugins`
 - `cd path_to_wordpress/wp-content/themes/`
 - `git clone git@github.com:Shoptet/shoptet-wp-theme.git shoptet-wp-theme`
 - `cd shoptet-wp-theme`
@@ -19,7 +22,9 @@
 - `grunt` - enable watch mode for SCSS & JS files
 - `grunt build` - build CSS & JS files
 
-Go to WP admin and set **shoptet-wp-theme** template
+Go to WP admin and:
+- set **shoptet-wp-theme** template
+- activate installed plugins
 
 ## Workflow
 - DO NOT edit anything outside **src** repository*
@@ -33,9 +38,3 @@ Go to WP admin and set **shoptet-wp-theme** template
 * in justified cases you can make pull request as well for
 git@github.com:Shoptet/microsite-styles.git or
 git@github.com:Shoptet/shoptet-wp-theme.git
-
-## Design guide
-See `shoptet-wp-theme/scaffolding/index.html` 
-
-
-
