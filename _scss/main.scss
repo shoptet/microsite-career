@@ -29,13 +29,18 @@ body {
 .flex-row-items {
     display: flex;
     justify-content: space-between;
-    > * {
-        margin: 10px;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+        flex-wrap: wrap;
+    }
+    @media (min-width: map-get($grid-breakpoints, 'sm')) {
+        > * {
+            margin: 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 }

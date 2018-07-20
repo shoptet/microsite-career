@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Available Position template
+Template Name: Available Position - Post
 Template Post Type: post
 */
 ?>
@@ -21,6 +21,7 @@ Template Post Type: post
 
 <?php
     // GET PAGES AND LOAD TEMPLATES
+    $singleView = false;
     $output = '';
     $args = array(
         'meta_query' => array(

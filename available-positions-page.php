@@ -1,8 +1,23 @@
-<?php /* Template Name: Available Positions template */ ?>
+<?php /* Template Name: Available Positions - Page */ ?>
+
+<?php if( !isset($singleView) || $singleView ) { get_header(); } ?>
 
 <section class="section section-primary">
     <div class="section-inner container">
-        <h2><?php echo apply_filters( 'the_content', $page->post_title ); ?></h2>
+        <?php if( !isset($singleView) || $singleView ) {  ?>
+
+            <?php get_template_part( 'template-parts/utils/content', 'breadcrumb' ); ?>
+            <h1><?php the_title(); ?></h1>
+
+            <?php the_content(); ?>
+
+        <?php } else {  ?>
+
+            <h2><?php echo apply_filters( 'the_content', $page->post_title ); ?></h2>
+            <?php echo apply_filters( 'the_content', $page->post_content ); ?>
+
+        <?php } ?>
+
         <?php
         $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
 
@@ -29,7 +44,10 @@
         <?php else : ?>
             <p><?php _e( 'Aktuálně nemáme žádné volné pozice.' ); ?></p>
         <?php endif; ?>
+
+        <?php if( !isset($singleView) || $singleView ) { get_template_part( 'template-parts/page/content', 'widget' ); } ?>
     </div>
 </section>
 
+<?php if( !isset($singleView) || $singleView ) { get_footer(); } ?>
 
