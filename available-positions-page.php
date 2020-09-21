@@ -42,7 +42,7 @@
             <?php wp_reset_postdata(); ?>
 
         <?php else : ?>
-            <p><?php _e( 'Aktuálně nemáme žádné volné pozice.' ); ?></p>
+            <p><?php /* _e( 'Aktuálně nemáme žádné volné pozice.' ); */ ?></p>
         <?php endif; ?>
 
         <?php if( !isset($singleView) || $singleView ) { get_template_part( 'template-parts/page/content', 'widget' ); } ?>
