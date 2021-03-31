@@ -1,13 +1,13 @@
-$fa-font-path: "../../../scaffolding/vendor/fa/webfonts";
+$fa-font-path: "../../../assets/vendor/fa/webfonts";
 $claim-bg-image: url('../img/claim.png');
-$colorbox-path: "../../../scaffolding/img/colorbox/";
+$colorbox-path: "../../../assets/img/colorbox/";
 
-@import "../../scaffolding/shoptet/variables-bootstrap";
-@import "../../scaffolding/vendor/bs/scss/functions";
-@import "../../scaffolding/vendor/bs/scss/variables";
-@import "../../scaffolding/vendor/bs/scss/mixins/clearfix";
-@import "../../scaffolding/shoptet/variables-shoptet";
-@import "../../scaffolding/vendor/bs/scss/mixins";
+@import "../../assets/shoptet/variables-bootstrap";
+@import "../../assets/vendor/bs/scss/functions";
+@import "../../assets/vendor/bs/scss/variables";
+@import "../../assets/vendor/bs/scss/mixins/clearfix";
+@import "../../assets/shoptet/variables-shoptet";
+@import "../../assets/vendor/bs/scss/mixins";
 
 @import "modules/variables";
 

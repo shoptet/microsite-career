@@ -19,12 +19,12 @@
     "load-grunt-tasks": "^4.0.0"
   },
   "jsFiles": [
-    "../scaffolding/vendor/jquery-3.3.1.min.js",
-    "../scaffolding/vendor/popper.min.js",
-    "../scaffolding/vendor/bs/js/util.js",
-    "../scaffolding/vendor/bs/js/dropdown.js",
-    "../scaffolding/vendor/jquery.colorbox-min.js",
-    "../scaffolding/shoptet/js/shoptet.js",
+    "../assets/vendor/jquery-3.3.1.min.js",
+    "../assets/vendor/popper.min.js",
+    "../assets/vendor/bs/js/util.js",
+    "../assets/vendor/bs/js/dropdown.js",
+    "../assets/vendor/jquery.colorbox-min.js",
+    "../assets/shoptet/js/shoptet.js",
     "_js/main.js"
   ]
 }
