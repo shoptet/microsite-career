@@ -1,0 +1,129 @@
+.job-tease {
+  position: relative;
+  display: block;
+  padding: 1rem 1rem .7rem 1rem;
+  background-color: $gray-200;
+  border-radius: 15px;
+  color: $body-color;
+  transition: all 100ms ease;
+  
+  @include media-breakpoint-up(sm) {
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  }
+
+  @include hover-focus {
+    text-decoration: none;
+    color: $body-color;
+    background-color: lighten($gray-200, 2%);
+    box-shadow: 0px 7px 5px 0px rgba($black,.15);
+    transition: all 100ms ease;
+  }
+  
+  &:active {
+    background-color: $gray-200;
+    box-shadow: inset 0px 0px 5px 0px rgba($black,.15);
+    transition: all 100ms ease;
+  }
+}
+
+.job-tease-title {
+  margin-bottom: .75rem;
+  font-size: .9rem;
+
+  @include media-breakpoint-up(sm) {
+    padding-right: 3.5rem;
+    font-size: 1.2rem;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    padding-right: 3.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.job-tease-location {
+  font-size: .8rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
+}
+
+.job-tease-title-action-btn {
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  position: absolute;
+  top: .75rem;
+  right: 1.5rem;
+  font-size: 2.8rem;
+  color: $secondary;
+}
+
+.job-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @include media-breakpoint-down(xs) {
+    position: relative;
+    margin-top: -5rem;
+    margin-bottom: 3rem;
+    padding: .75rem .2rem;
+    background-color: $body-bg;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 4rem;
+  }
+}
+
+.job-header-title {
+  font-weight: $display2-weight;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display2-size;
+  }
+}
+
+.job-content {
+  font-size: 20px;
+  
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-size: $display3-size;
+    text-align: center;
+    
+    &, strong {
+      font-weight: $display3-weight;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: $display4-size-sm;
+    }
+  }
+
+
+  > p:first-of-type {
+    margin-bottom: 3rem;
+    font-size: $lead-font-size-sm;
+    //font-size: 1.25rem;
+    font-weight: $lead-font-weight;
+    text-align: center;
+    
+    @include media-breakpoint-up(sm) {
+      font-size: $lead-font-size;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -5rem;
+      margin-left: -5rem;
+      //font-size: 1.4rem;
+    }
+  }
+
+  ul {
+    padding-left: 1.3rem;
+  }
+}

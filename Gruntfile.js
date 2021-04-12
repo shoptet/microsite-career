@@ -23,19 +23,14 @@ module.exports = function(grunt) {
                     '../assets/shoptet.scss',
                     '../assets/shoptet/*.scss'
                 ],
-                tasks: ['sass:production'],
-                options: {
-                    livereload: 35729
-                }
+                tasks: ['sass:production']
             },
             js: {
                 files: [
-                    '_js/*.js'
+                    '_js/*.js',
+                    '../assets/shoptet/js/*.js'
                 ],
-                tasks: ['uglify:production'],
-                options: {
-                    livereload: 35729
-                }
+                tasks: ['uglify:production']
             }
         },
         uglify: {

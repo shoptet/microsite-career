@@ -10,10 +10,7 @@ $colorbox-path: "../../../assets/img/colorbox/";
 @import "../../assets/vendor/bs/scss/mixins";
 
 @import "modules/variables";
-
-body {
-    background-color: #fff;
-}
+@import "modules/job";
 
 .anchor {
     position: relative;
