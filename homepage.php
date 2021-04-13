@@ -98,12 +98,12 @@
           <div class="p-2 pt-3 p-sm-2 m-sm-1">
             <div class="card-more">
               <p class="mb-1"><?= date_i18n(get_option('date_format'), strtotime($post_array['date'])); ?></p>
-              <h3 class="h5 mt-0 mb-2"><?= $post_array['title']['rendered'] ?></h3>
+              <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank"><h3 class="h5 mt-0 mb-2"><?= $post_array['title']['rendered'] ?></h3></a>
               <div>
                 <?= $post_array['excerpt']['rendered'] ?>
               </div>
               <div class="card-more-button text-center">
-                <a href="<?= $post_array['link'] ?>" class="link-body">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
               </div>
             </div>
           </div>
