@@ -80,6 +80,40 @@
   <?php endfor; ?>
 </div>
 
+<?php if (is_callable(['Shoptet\ShoptetExternal', 'get_blog_posts']) && $blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864])): ?>
+  <div class="container">
+    <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
+  </div>
+  <div class="swipeable py-3 mb-4">
+    <?php foreach($blog_posts as $post_array): ?>
+      <div class="swipeable-item swipeable-item-sm">
+        <div class="card card-hover">
+          <a href="<?= $post_array['link'] ?>" target="_blank">
+            <div class="display-img display-img-fix-vertical display-img-4-by-3 bg-gray-dark">
+              <?php if( isset($post_array['_embedded']['wp:featuredmedia'][0]['media_details']) ): ?>
+                <img src="<?= $post_array['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url'] ?>" alt="<?= $post_array['_embedded']['wp:featuredmedia'][0]['alt_text'] ?>">
+              <?php endif; ?>
+            </div>
+          </a>
+          <div class="p-2 pt-3 p-sm-2 m-sm-1">
+            <div class="card-more">
+              <p class="mb-1"><?= date_i18n(get_option('date_format'), strtotime($post_array['date'])); ?></p>
+              <h3 class="h5 mt-0 mb-2"><?= $post_array['title']['rendered'] ?></h3>
+              <div>
+                <?= $post_array['excerpt']['rendered'] ?>
+              </div>
+              <div class="card-more-button text-center">
+                <a href="<?= $post_array['link'] ?>" class="link-body">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <?php endforeach; ?>
+  </div>
+<?php endif; ?>
+
 <?php if (is_callable(['JobOfferService', 'get_grouped_by_tax'])): ?>
   <div class="container pb-4" id="pozice">
     <div class="block bg-gray box-shadow">
