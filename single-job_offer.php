@@ -26,7 +26,6 @@
 
   <div class="container container-narrow pb-4">
     <div class="job-content">
-      <h3>Proč tě hledáme?</h3>
       <?php the_content(); ?>
       <?php
         $requirements = get_post_meta($post->ID, 'job_offer_requirements', true);
@@ -40,8 +39,8 @@
   <div class="container container-narrow pb-5" id="odpovedet">
     <div class="block bg-gray box-shadow">
       <div class="text-center">
-        <h2 class="display-2 mb-1">Zaujali jsme tě?</h2>
-        <p class="lead">Skvělé! Vyplň formulář a ozveme se.</p>
+        <h2 class="display-2 mb-1">Odpovědět na inzerát</h2>
+        <p class="lead">Obratem se ozveme zpět</p>
       </div>
       <?php get_template_part('src/template-parts/job_offer/content', 'application-form'); ?>
     </div>

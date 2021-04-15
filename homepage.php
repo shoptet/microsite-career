@@ -5,7 +5,7 @@
   <div class="container">
     <h1 class="heading">Přidejte se do Shoptetu</h1>
     <p class="lead mb-3">Pojďte s námi měnit svět e-commerce</p>
-    <a href="#pozice" class="btn btn-secondary btn-lg">Všechny pozice<i class="fas fa-arrow-right ml-2"></i></a>
+    <a href="#volna-mista" class="btn btn-secondary btn-lg">Všechna volná místa<i class="fas fa-arrow-right ml-2"></i></a>
   </div>
 </div>
 
@@ -115,9 +115,9 @@
 <?php endif; ?>
 
 <?php if (is_callable(['JobOfferService', 'get_grouped_by_tax'])): ?>
-  <div class="container pb-4" id="pozice">
+  <div class="container pb-4" id="volna-mista">
     <div class="block bg-gray box-shadow">
-      <h2 class="display-2 text-center mb-3">Aktuální volné pozice</h2>
+      <h2 class="display-2 text-center mb-3">Aktuální volná místa</h2>
       <?php
         $jobs_by_department = JobOfferService::get_grouped_by_tax('job_offer_department');
       ?>
