@@ -121,18 +121,42 @@
       <?php
         $jobs_by_department = JobOfferService::get_grouped_by_tax('job_offer_department');
       ?>
+      <div class="row">
+        <div class="col-sm-6">
+          <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-location">
+            <option value="" selected>Lokalita (vše)</option>
+            <?php
+              $locations_all = get_terms(['taxonomy' => 'job_offer_location']);
+              foreach($locations_all as $l) {
+                printf('<option value="%s">%s</option>', $l->slug, $l->name);
+              }
+            ?>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-department">
+            <option value="" selected>Oddělení (vše)</option>
+            <?php
+              $departments_all = get_terms(['taxonomy' => 'job_offer_department']);
+              foreach($departments_all as $d) {
+                printf('<option value="%s">%s</option>', $d->slug, $d->name);
+              }
+            ?>
+          </select>
+        </div>
+      </div>
       <div class="block bg-white">
-        <?php $i = 0; foreach($jobs_by_department as $dep): $i++; ?>
-          <div class="<?= ($i < count($jobs_by_department) ? 'pb-3' : '') ?>">
+        <?php foreach($jobs_by_department as $dep): ?>
+          <div class="mb-3" data-job-list data-job-list-department="<?= $dep['term']->slug ?>">
             <h3 class="h5 mb-1"><?= $dep['term']->name ;?></h3>
-            <?php $j = 0; foreach($dep['posts'] as $p): $j++; ?>
+            <?php foreach($dep['posts'] as $p): ?>
               <?php
                 $locations = get_the_terms($p->ID, 'job_offer_location');
                 $location = array_pop($locations);
                 $departments = get_the_terms($p->ID, 'job_offer_department');
                 $department = array_pop($departments);
               ?>
-              <a class="job-tease <?= ($j < count($dep['posts']) ? 'mb-2' : '') ?>" href="<?= get_permalink($p); ?>">
+              <a class="job-tease mb-2" href="<?= get_permalink($p); ?>" data-job-item data-job-item-location="<?= $location->slug ?>">
                 <div class="d-flex justify-content-between">
                   <div><h2 class="job-tease-title"><?= $p->post_title; ?></h2></div>
                   <div><i class="job-tease-title-action-btn fas fa-chevron-circle-right"></i></div>
@@ -149,8 +173,9 @@
                 </div>
               </a>
             <?php endforeach; ?>
-            </div>
+          </div>
         <?php endforeach; ?>
+        <div class="text-center fs-120" data-job-message></div>
       </div>
     </div>
   </div>
