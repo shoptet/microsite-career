@@ -3,7 +3,10 @@
 <?php while (have_posts()): the_post(); ?>
 
   <div class="display-img display-img-fluid">
-    <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+    <?php
+      $job_offer_image = get_field('job_offer_image', 'option');
+      echo wp_get_attachment_image($job_offer_image, 'large');
+    ?>
   </div>
 
   <div class="container">

@@ -11,7 +11,10 @@
 
 <div class="container-media">
   <div class="display-img">
-    <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+    <?php
+      $hero_image = get_field('hero_image', 'option');
+      echo wp_get_attachment_image($hero_image, 'large');
+    ?>
   </div>
 </div>
 
@@ -32,7 +35,10 @@
   <div class="container-media">
     <div class="billboard">
       <div class="billboard-img">
-        <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <?php
+          $mission_image = get_field('mission_image', 'option');
+          echo wp_get_attachment_image($mission_image, 'large');
+        ?>
       </div>
       <div class="billboard-body mt-4 mt-md-0">
         <h2 class="display-2 mb-0">Práce v Shoptetu</h2>
@@ -53,23 +59,26 @@
   <h2 class="display-2 text-center mb-0">Shoptet tvoříme dohromady</h2>
 </div>
 
-<div class="swipeable py-3 mb-4">
-  <?php for ($i = 0; $i < 5; $i++): ?>
+<div class="swipeable py-3 mb-5">
+  <?php while (have_rows('testimonials', 'option')): the_row(); ?>
     <div class="swipeable-item">
 
-      <div class="box-shadow bg-white rounded">
+      <div class="box-shadow bg-white rounded h-100">
         <div class="row align-items-center no-gutters">
           <div class="col-lg-6">
             <div class="display-img display-img-fix-vertical display-img-4-by-3">
-              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+              <?php
+                $image = get_sub_field('image');
+                echo wp_get_attachment_image($image, 'large');
+              ?>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="p-2 pt-3 p-sm-3">
-              <h2>John Doe</h2>
-              <p class="font-weight-bold text-muted">Customer Line Consultant</p>
+              <h2><?php the_sub_field('name'); ?></h2>
+              <p class="font-weight-bold text-muted"><?php the_sub_field('position'); ?></p>
               <div class="fs-xl-125">
-                <p>V Shoptetu pracuji čtvrtým rokem na zákaznické lince. Skvělý kolektiv a rodinná atmosféra je důvod proč vstávám do práce každé ráno s úsměvem. Moc ráda pomáhám realizovat sny i ostatním lidem a myslím, že v Shoptetu se nám to opravdu daří.</p>
+                <p><?php the_sub_field('text'); ?></p>
               </div>
             </div>
           </div>
@@ -77,14 +86,14 @@
       </div>
 
     </div>
-  <?php endfor; ?>
+  <?php endwhile; ?>
 </div>
 
 <?php if (is_callable(['Shoptet\ShoptetExternal', 'get_blog_posts']) && $blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864])): ?>
   <div class="container">
     <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
   </div>
-  <div class="swipeable py-3 mb-4">
+  <div class="swipeable py-3 mb-5">
     <?php foreach($blog_posts as $post_array): ?>
       <div class="swipeable-item swipeable-item-sm">
         <div class="card card-hover">
@@ -115,7 +124,7 @@
 <?php endif; ?>
 
 <?php if (is_callable(['JobOfferService', 'get_grouped_by_tax'])): ?>
-  <div class="container pb-4" id="volna-mista">
+  <div class="container pb-5" id="volna-mista">
     <div class="block bg-gray box-shadow">
       <h2 class="display-2 text-center mb-3">Aktuální volná místa</h2>
       <?php
