@@ -2,11 +2,13 @@
 
 <?php while (have_posts()): the_post(); ?>
 
-  <div class="display-img display-img-fluid">
-    <?php
-      $job_offer_image = get_field('job_offer_image', 'option');
-      echo wp_get_attachment_image($job_offer_image, 'large');
-    ?>
+  <div class="job-image">
+    <div class="parallax-wrapper">
+      <?php
+        $job_offer_image = get_field('job_offer_image', 'option');
+        echo wp_get_attachment_image($job_offer_image, 'large', false, ['class' => 'parallax']);
+      ?>
+    </div>
   </div>
 
   <div class="container">

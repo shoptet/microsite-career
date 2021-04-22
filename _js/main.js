@@ -44,4 +44,10 @@ $(function(){
     }, 500);
   });
 
+  var images = document.querySelectorAll('.parallax');
+  new simpleParallax(images, {
+    scale: 1.5,
+    customWrapper: '.parallax-wrapper',
+  });
+
 });

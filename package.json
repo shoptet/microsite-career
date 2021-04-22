@@ -26,6 +26,10 @@
     "../assets/vendor/bs/js/collapse.js",
     "../assets/vendor/jquery.colorbox-min.js",
     "../assets/shoptet/js/shoptet.js",
+    "./node_modules/simple-parallax-js/dist/simpleParallax.js",
     "_js/main.js"
-  ]
+  ],
+  "dependencies": {
+    "simple-parallax-js": "^5.6.2"
+  }
 }

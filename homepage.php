@@ -10,10 +10,10 @@
 </div>
 
 <div class="container-media">
-  <div class="display-img">
+  <div class="parallax-wrapper">
     <?php
       $hero_image = get_field('hero_image', 'option');
-      echo wp_get_attachment_image($hero_image, 'large');
+      echo wp_get_attachment_image($hero_image, 'large', false, ['class' => 'parallax']);
     ?>
   </div>
 </div>
@@ -35,10 +35,12 @@
   <div class="container-media">
     <div class="billboard">
       <div class="billboard-img">
-        <?php
-          $mission_image = get_field('mission_image', 'option');
-          echo wp_get_attachment_image($mission_image, 'large');
-        ?>
+        <div class="parallax-wrapper">
+          <?php
+            $mission_image = get_field('mission_image', 'option');
+            echo wp_get_attachment_image($mission_image, 'large', false, ['class' => 'parallax']);
+          ?>
+        </div>
       </div>
       <div class="billboard-body mt-4 mt-md-0">
         <h2 class="display-2 mb-0">Práce v Shoptetu</h2>
