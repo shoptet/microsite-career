@@ -32,4 +32,16 @@ $(function(){
   };
 
   $('#job-list-filter-location, #job-list-filter-department').on('change', handleChange);
+
+  $('[data-job-filter-tax]').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var tax = $this.attr('data-job-filter-tax');
+    var term = $this.attr('data-job-filter-term');
+    $('#job-list-filter-' + tax).val(term).trigger('change');
+    $('html, body').animate({
+      scrollTop: $('#volna-mista').offset().top,
+    }, 500);
+  });
+
 });

@@ -133,7 +133,7 @@
       <div class="row">
         <div class="col-sm-6">
           <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-location">
-            <option value="" selected>Lokalita (vše)</option>
+            <option value="" selected>Všechny lokality</option>
             <?php
               $locations_all = get_terms(['taxonomy' => 'job_offer_location']);
               foreach($locations_all as $l) {
@@ -144,7 +144,7 @@
         </div>
         <div class="col-sm-6">
           <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-department">
-            <option value="" selected>Oddělení (vše)</option>
+            <option value="" selected>Všechna oddělení</option>
             <?php
               $departments_all = get_terms(['taxonomy' => 'job_offer_department']);
               foreach($departments_all as $d) {
@@ -173,11 +173,11 @@
                 <div class="d-flex justify-content-between">
                   <div class="job-tease-location">
                     <?php if (!empty($location)): ?>
-                      <i class="fas fa-map-marker-alt mr-1"></i><?= $location->name ?>
+                      <span class="hover-opacity" data-job-filter-tax="location" data-job-filter-term="<?= $location->slug ?>" title="Filtrovat dle této lokality"><i class="fas fa-map-marker-alt mr-1"></i><?= $location->name ?></span>
                     <?php endif; ?>
                   </div>
                   <?php if (!empty($department)): ?>
-                    <div><span class="badge badge-pill badge-primary"><?= $department->name ?></span></div>
+                    <div><span class="badge badge-pill badge-primary hover-opacity" data-job-filter-tax="department" data-job-filter-term="<?= $department->slug ?>" title="Filtrovat dle tohoto oddělení"><?= $department->name ?></span></div>
                   <?php endif; ?>
                 </div>
               </a>
