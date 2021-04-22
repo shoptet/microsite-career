@@ -3,9 +3,9 @@
 
 <div class="text-center py-5">
   <div class="container">
-    <h1 class="heading">Přidejte se do Shoptetu</h1>
-    <p class="lead mb-3">Pojďte s námi měnit svět e-commerce</p>
-    <a href="#volna-mista" class="btn btn-secondary btn-lg">Všechna volná místa<i class="fas fa-arrow-right ml-2"></i></a>
+    <h1 class="heading come-in">Přidejte se do Shoptetu</h1>
+    <p class="lead mb-3 come-in">Pojďte s námi měnit svět e-commerce</p>
+    <a href="#volna-mista" class="btn btn-secondary btn-lg">Všechna volná místa<span class="icon-container ml-2"><i class="fas fa-arrow-right"></i></span></a>
   </div>
 </div>
 
