@@ -2,7 +2,7 @@
 
 require_once 'acf.php';
 
-define('CUSTOM_SEARCH_HEADER', true);
+define('SIMPLY_HEADER', true);
 
 add_action('acf/init', 'shoptet_acf_init');
 

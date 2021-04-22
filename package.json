@@ -23,6 +23,7 @@
     "../assets/vendor/popper.min.js",
     "../assets/vendor/bs/js/util.js",
     "../assets/vendor/bs/js/dropdown.js",
+    "../assets/vendor/bs/js/collapse.js",
     "../assets/vendor/jquery.colorbox-min.js",
     "../assets/shoptet/js/shoptet.js",
     "_js/main.js"
