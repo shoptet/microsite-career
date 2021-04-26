@@ -13,7 +13,7 @@
   <div class="parallax-wrapper">
     <?php
       $hero_image = get_field('hero_image', 'option');
-      echo wp_get_attachment_image($hero_image, 'large', false, ['class' => 'parallax']);
+      echo wp_get_attachment_image($hero_image, 'large', false, ['class' => 'parallax', 'sizes' => '(max-width: 1200px) 100vw, 1200px']);
     ?>
   </div>
 </div>
