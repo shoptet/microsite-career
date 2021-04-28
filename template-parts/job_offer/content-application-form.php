@@ -38,7 +38,7 @@
     <div class="form-check">
       <input class="form-check-input" type="checkbox" name="gdpr" value="1" id="jobApplicationGDPR" required>
       <label class="form-check-label" for="jobApplicationGDPR">
-        Vložením svého jména, kontaktního e-mailu a CV souhlasím se <a href="https://kariera.shoptet.cz/zasady-ochrany-osobnich-udaju/" target="_blank">zpracováním osobních údajů</a> společností Shoptet s.r.o. pro účely výběrového řízení.
+        Vložením svého jména, kontaktního e-mailu a CV souhlasím se <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">zpracováním osobních údajů</a> společností Shoptet s.r.o. pro účely výběrového řízení.
       </label>
     </div>
   </div>

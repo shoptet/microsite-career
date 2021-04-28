@@ -202,7 +202,7 @@
         Nenašli jste svoji pozici ale máte zájem se k nám přidat? 
         Máte otázku? Napište nám, rádi vám odpovíme.
       </p>
-      <a href="mailto:xxx" class="btn btn-secondary btn-lg">Napište nám<i class="fas fa-arrow-right ml-2"></i></a>
+      <a href="mailto:info@shoptet.cz" class="btn btn-secondary btn-lg">Napište nám<i class="fas fa-arrow-right ml-2"></i></a>
     </div>
   </div>
 </div>
