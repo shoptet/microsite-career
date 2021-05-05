@@ -24,8 +24,8 @@
   </div>
   <div class="container container-narrow">
     <p class="lead">
-      Díky Shoptetu si tisíce lidí plní sny o podnikání. Pomáháme drobným prodejců i známým
-      značkám uspět ve světě e-commerce. Máme smysluplný produkt a špičkovou zákaznickou péči.
+      Díky Shoptetu si tisíce lidí plní sny o&nbsp;podnikání. Pomáháme drobným prodejcům i&nbsp;známým
+      značkám uspět ve světě e-commerce. Máme smysluplný produkt a&nbsp;špičkovou zákaznickou péči.
     </p>
   </div>
 </div>
@@ -51,7 +51,7 @@
   <div class="container container-narrow pt-4 pb-5">
     <p class="lead">
       Je nás přes 100, rychle rosteme, ale zároveň si udržujeme pružnost bez těžkopádných procesů
-      a hierarchie. Flexibilní pracovní doba, home office nebo budget na vzdělávání jsou samozřejmost. 
+      a&nbsp;hierarchie. Flexibilní pracovní doba, home office nebo budget na vzdělávání jsou samozřejmost. 
     </p>
   </div>
 
