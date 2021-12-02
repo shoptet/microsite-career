@@ -98,8 +98,7 @@
     </div>
   </div>
 </div>
-
-<?php if ($blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864])): ?>
+<?php if ($blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864, 'exclude' => 21262])): ?>
   <div class="container">
     <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
   </div>
