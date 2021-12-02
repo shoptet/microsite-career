@@ -50,4 +50,25 @@ $(function(){
     customWrapper: '.parallax-wrapper',
   });
 
+  var splideFull = new Splide('.splide.full', {
+    gap: '1rem',
+  });
+  splideFull.mount();
+
+  var splideBlog = new Splide('.splide.blog', {
+    perPage: 3,
+    gap: '1rem',
+    pagination: false,
+    perMove: 1,
+    breakpoints: {
+      1199: {
+        perPage: 2,
+      },
+      767: {
+        perPage: 1,
+      },
+    }
+  });
+  splideBlog.mount();
+
 });

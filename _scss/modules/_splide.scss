@@ -1,0 +1,29 @@
+.splide {
+
+  .splide__track {
+    overflow: visible;
+  }
+
+  .splide__pagination__page {
+    background: #ccc;
+
+    &.is-active {
+      background: $primary;
+      opacity: 1;
+    }
+  }
+
+  .splide__arrow {
+    background: $primary;
+
+    svg {
+      fill: $white;
+    }
+
+    &:disabled {
+      opacity: 0.1;
+      cursor: default;
+    }
+  }
+
+}

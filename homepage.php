@@ -61,67 +61,80 @@
   <h2 class="display-2 text-center mb-0">Shoptet tvoříme dohromady</h2>
 </div>
 
-<div class="swipeable py-3 mb-5">
-  <?php while (have_rows('testimonials', 'option')): the_row(); ?>
-    <div class="swipeable-item">
-
-      <div class="box-shadow bg-white rounded h-100">
-        <div class="row align-items-center no-gutters">
-          <div class="col-lg-6">
-            <div class="display-img display-img-fix-vertical display-img-4-by-3">
-              <?php
-                $image = get_sub_field('image');
-                echo wp_get_attachment_image($image, 'large');
-              ?>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="p-2 pt-3 p-sm-3">
-              <h2><?php the_sub_field('name'); ?></h2>
-              <p class="font-weight-bold text-muted"><?php the_sub_field('position'); ?></p>
-              <div class="fs-xl-125">
-                <p><?php the_sub_field('text'); ?></p>
+<div class="container py-3 mb-5">
+  <div class="splide full">
+    <div class="splide__track">
+      <div class="splide__list">
+		
+        <?php while (have_rows('testimonials', 'option')): the_row(); ?>
+          <div class="splide__slide">
+            
+            <div class="bg-white h-100 rounded box-shadow">
+              <div class="row align-items-center no-gutters">
+                <div class="col-lg-6">
+                  <div class="display-img display-img-fix-vertical display-img-4-by-3">
+                    <?php
+                      $image = get_sub_field('image');
+                      echo wp_get_attachment_image($image, 'large');
+                    ?>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="p-2 pt-3 p-sm-3">
+                    <h2><?php the_sub_field('name'); ?></h2>
+                    <p class="font-weight-bold text-muted"><?php the_sub_field('position'); ?></p>
+                    <div class="fs-xl-125">
+                      <p><?php the_sub_field('text'); ?></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
+          </div>
+        <?php endwhile; ?>
+
+      </div>
     </div>
-  <?php endwhile; ?>
+  </div>
 </div>
 
-<?php if (is_callable(['Shoptet\ShoptetExternal', 'get_blog_posts']) && $blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864])): ?>
+<?php if ($blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864])): ?>
   <div class="container">
     <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
   </div>
-  <div class="swipeable py-3 mb-5">
-    <?php foreach($blog_posts as $post_array): ?>
-      <div class="swipeable-item swipeable-item-sm">
-        <div class="card card-hover">
-          <a href="<?= $post_array['link'] ?>" target="_blank">
-            <div class="display-img display-img-fix-vertical display-img-4-by-3 bg-gray-dark">
-              <?php if( isset($post_array['_embedded']['wp:featuredmedia'][0]['media_details']) ): ?>
-                <img src="<?= $post_array['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url'] ?>" alt="<?= $post_array['_embedded']['wp:featuredmedia'][0]['alt_text'] ?>">
-              <?php endif; ?>
-            </div>
-          </a>
-          <div class="p-2 p-sm-2 m-sm-1">
-            <div class="card-more">
-              <p class="mb-1"><?= date_i18n(get_option('date_format'), strtotime($post_array['date'])); ?></p>
-              <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank"><h3 class="h5 mt-0 mb-2"><?= $post_array['title']['rendered'] ?></h3></a>
-              <div>
-                <?= $post_array['excerpt']['rendered'] ?>
+  <div class="container py-3 mb-5">
+    <div class="splide blog">
+      <div class="splide__track">
+        <div class="splide__list">
+          <?php foreach($blog_posts as $post_array): ?>
+            <div class="splide__slide">
+              <div class="card card-hover">
+                <a href="<?= $post_array['link'] ?>" target="_blank">
+                  <div class="display-img display-img-fix-vertical display-img-4-by-3 bg-gray-dark">
+                    <?php if( isset($post_array['_embedded']['wp:featuredmedia'][0]['media_details']) ): ?>
+                      <img src="<?= $post_array['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url'] ?>" alt="<?= $post_array['_embedded']['wp:featuredmedia'][0]['alt_text'] ?>">
+                    <?php endif; ?>
+                  </div>
+                </a>
+                <div class="p-2 p-sm-2 m-sm-1">
+                  <div class="card-more">
+                    <p class="mb-1"><?= date_i18n(get_option('date_format'), strtotime($post_array['date'])); ?></p>
+                    <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank"><h3 class="h5 mt-0 mb-2"><?= $post_array['title']['rendered'] ?></h3></a>
+                    <div>
+                      <?= $post_array['excerpt']['rendered'] ?>
+                    </div>
+                    <div class="card-more-button text-center">
+                      <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="card-more-button text-center">
-                <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
-              </div>
             </div>
-          </div>
+          <?php endforeach; ?>
         </div>
-
       </div>
-    <?php endforeach; ?>
+    </div>
   </div>
 <?php endif; ?>
 

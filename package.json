@@ -13,6 +13,7 @@
   "devDependencies": {
     "grunt": "^1.0.2",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.1",
@@ -27,9 +28,11 @@
     "../assets/vendor/jquery.colorbox-min.js",
     "../assets/shoptet/js/shoptet.js",
     "./node_modules/simple-parallax-js/dist/simpleParallax.js",
+    "./node_modules/@splidejs/splide/dist/js/splide.js",
     "_js/main.js"
   ],
   "dependencies": {
+    "@splidejs/splide": "^3.6.8",
     "simple-parallax-js": "^5.6.2"
   }
 }

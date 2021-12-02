@@ -12,6 +12,12 @@ $colorbox-path: "../../../assets/img/colorbox/";
 @import "modules/variables";
 @import "modules/job";
 @import "modules/parallax";
+@import "modules/splide";
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 .shp_footer {
     .shp_footer-try-us {
