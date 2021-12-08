@@ -204,17 +204,23 @@
   </div>
 <?php endif; ?>
 
-<div class="text-center py-4 bg-gray">
+<div class="py-4 bg-gray">
   <div class="py-2">
     <div class="container">
-      <h2 class="display-2 mb-3">Kontakt na HR</h2>
+      <h2 class="display-2 mb-3 text-center">Kontakt na HR</h2>
     </div>
     <div class="container container-narrow">
-      <p class="lead mb-4">
+      <p class="lead mb-4 text-center">
         Nenašli jste svoji pozici ale máte zájem se k nám přidat? 
         Máte otázku? Napište nám, rádi vám odpovíme.
       </p>
-      <a href="mailto:info@shoptet.cz" class="btn btn-secondary btn-lg">Napište nám<i class="fas fa-arrow-right ml-2"></i></a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+          <?php echo do_shortcode(get_field('contact_form_shortcode', 'option'))?>
+        </div>
+      </div>
     </div>
   </div>
 </div>

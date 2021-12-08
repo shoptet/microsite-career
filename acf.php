@@ -16,6 +16,25 @@ function shoptet_acf_init() {
       'title' => 'General Settings',
       'fields' => array(
         array(
+          'key' => 'field_61b0dda06f7a4',
+          'label' => 'Contact Form Shortcode',
+          'name' => 'contact_form_shortcode',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+        ),
+        array(
           'key' => 'field_607ecabb01540',
           'label' => 'Hero Image',
           'name' => 'hero_image',
