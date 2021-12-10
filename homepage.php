@@ -50,7 +50,7 @@
 
   <div class="container container-narrow pt-4 pb-5">
     <p class="lead">
-      Je nás přes 100, rychle rosteme, ale zároveň si udržujeme pružnost bez těžkopádných procesů
+      Je nás přes 200, rychle rosteme, ale zároveň si udržujeme pružnost bez těžkopádných procesů
       a&nbsp;hierarchie. Flexibilní pracovní doba, home office nebo budget na vzdělávání jsou samozřejmost. 
     </p>
   </div>
