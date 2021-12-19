@@ -13,7 +13,7 @@
   <div class="parallax-wrapper">
     <?php
       $hero_image = get_field('hero_image', 'option');
-      echo wp_get_attachment_image($hero_image, 'large', false, ['class' => 'parallax', 'sizes' => '(max-width: 1200px) 100vw, 1200px']);
+      echo wp_get_attachment_image($hero_image, 'large', false, ['class' => 'parallax', 'sizes' => '(max-width: 1199px) 100vw, 1200px']);
     ?>
   </div>
 </div>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="container py-3 mb-5">
-  <div class="splide full">
+  <div class="splide full overflow">
     <div class="splide__track">
       <div class="splide__list">
 		
@@ -103,7 +103,7 @@
     <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
   </div>
   <div class="container py-3 mb-5">
-    <div class="splide blog">
+    <div class="splide blog overflow">
       <div class="splide__track">
         <div class="splide__list">
           <?php foreach($blog_posts as $post_array): ?>
@@ -131,6 +131,51 @@
               </div>
             </div>
           <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+
+<?php $gallery = get_field('gallery', 'option'); ?>
+<?php if (is_array($gallery) && !empty($gallery)): ?>
+  <div class="container pb-5" id="galerie">
+    <div class="block bg-gray box-shadow">
+      <h2 class="display-2 text-center mb-3">Život v Shoptetu</h2>
+      <div id="gallery-slider" class="splide mb-2" itemscope itemtype="http://schema.org/ImageGallery">  
+        <div class="splide__track">
+          <div class="splide__list">
+            <?php foreach($gallery as $image): ?>
+              <?php
+                $attachment_id = $image['ID'];
+                $image_src = wp_get_attachment_image_src($attachment_id, 'large');
+                list($src, $width, $height) = $image_src;
+                $gallery_image_meta = wp_get_attachment_metadata($attachment_id);
+                $size_array = [absint($width), absint($height)];
+              ?>
+              <figure class="splide__slide rounded" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <img
+                  src="<?php echo $src; ?>"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  data-splide-lazy-srcset="<?php echo wp_calculate_image_srcset($size_array, $src, $gallery_image_meta, $attachment_id); ?>"
+                  sizes="(max-width: 575px) 100vw, (max-width: 767px) 476px, (max-width: 991px) 656px, (max-width: 1199px) 760px, 940px"
+                  alt="<?php echo trim(strip_tags(get_post_meta($attachment_id, '_wp_attachment_image_alt', true))); ?>"
+                  itemprop="contentUrl"
+                >
+              </figure>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+      <div id="gallery-thumbnail-slider" class="splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            <?php foreach($gallery as $image): ?>
+              <div class="splide__slide">
+                <?php echo wp_get_attachment_image($image['ID'], 'thumbnail', false) ?>
+              </div>
+            <?php endforeach; ?>
+          </div>
         </div>
       </div>
     </div>

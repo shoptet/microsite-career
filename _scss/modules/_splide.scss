@@ -1,6 +1,6 @@
 .splide {
 
-  .splide__track {
+  &.overflow .splide__track {
     overflow: visible;
   }
 
@@ -26,4 +26,19 @@
     }
   }
 
+}
+
+#gallery-thumbnail-slider {
+  .splide__slide {
+    opacity: 0.3;
+  }
+
+  .splide__slide.is-active {
+    opacity: 1;
+  }
+
+  &.splide--nav>.splide__slider>.splide__track>.splide__list>.splide__slide.is-active,
+  &.splide--nav>.splide__track>.splide__list>.splide__slide.is-active {
+    border-color: $primary;
+  }
 }

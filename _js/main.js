@@ -71,4 +71,31 @@ $(function(){
   });
   splideBlog.mount();
 
+  var main = new Splide('#gallery-slider', {
+    rewind: true,
+    lazyLoad: 'nearby',
+  });
+
+  var thumbnails = new Splide('#gallery-thumbnail-slider', {
+    fixedWidth: 100,
+    fixedHeight: 100,
+    gap: '0.5rem',
+    pagination: false,
+    cover: true,
+    isNavigation: true,
+    focus: 'center',
+    type: 'loop',
+    arrows: false,
+    breakpoints : {
+      767: {
+        fixedWidth: 60,
+        fixedHeight: 60,
+      },
+    },
+  });
+  
+  main.sync(thumbnails);
+  main.mount();
+  thumbnails.mount();
+
 });
