@@ -17,3 +17,12 @@ add_action('wp_enqueue_scripts', function() {
   $file_path = get_theme_file_path($file_name);
   wp_enqueue_style('splide', $file_url, [], filemtime($file_path), 'all');
 });
+
+add_filter('wpseo_opengraph_image', function($image_url) {
+  $post = get_post();
+  if ($post instanceof WP_Post && $post->post_type == 'job_offer') {
+    $image = get_field('job_offer_og_image', 'option');
+    $image_url = wp_get_attachment_url($image);
+  }
+  return $image_url;
+});
