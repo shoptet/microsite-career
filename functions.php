@@ -26,3 +26,12 @@ add_filter('wpseo_opengraph_image', function($image_url) {
   }
   return $image_url;
 });
+
+// Remove inline styles from job_offer content
+add_filter('the_content', function($content) {
+  $post = get_post();
+  if ($post instanceof WP_Post && $post->post_type == 'job_offer') {
+    $content = preg_replace('/ style=("|\')(.*?)("|\')/','', $content);
+  }
+  return $content;
+});
