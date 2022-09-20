@@ -74,6 +74,7 @@ $(function(){
   var main = new Splide('#gallery-slider', {
     rewind: true,
     lazyLoad: 'nearby',
+    preloadPages: 2,
   });
 
   var thumbnails = new Splide('#gallery-thumbnail-slider', {
