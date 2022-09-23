@@ -26,6 +26,18 @@ Go to WP admin and:
 - set **shoptet-wp-theme** template
 - activate installed plugins
 
+## I18N
+
+Generate messages:
+```sh
+wp i18n make-pot . languages/shoptet-career.pot --domain=shoptet-career --skip-js
+```
+
+Compile messages:
+```sh
+msgfmt -o languages/hu_HU.mo languages/hu_HU.po
+```
+
 ## Workflow
 - DO NOT edit anything outside **src** repository*
 - you can use `src/functions.php`, e.g. for registering new widgets

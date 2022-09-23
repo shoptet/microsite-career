@@ -3,9 +3,9 @@
 
 <div class="text-center py-5">
   <div class="container">
-    <h1 class="heading come-in">Přidejte se do Shoptetu</h1>
-    <p class="lead mb-3 come-in">Pojďte s námi měnit svět e-commerce</p>
-    <a href="#volna-mista" class="btn btn-secondary btn-lg">Všechna volná místa<span class="icon-container ml-2"><i class="fas fa-arrow-right"></i></span></a>
+    <h1 class="heading come-in"><?= get_field('hero_title', 'option'); ?></h1>
+    <p class="lead mb-3 come-in"><?= get_field('hero_subtitle', 'option'); ?></p>
+    <a href="#open-positions" class="btn btn-secondary btn-lg"><?php _e('Všechna volná místa', 'shoptet-career'); ?><span class="icon-container ml-2"><i class="fas fa-arrow-right"></i></span></a>
   </div>
 </div>
 
@@ -18,19 +18,18 @@
   </div>
 </div>
 
-<div class="text-center py-5" id="nase-mise">
+<div class="text-center py-5" id="our-mission">
   <div class="container">
-    <h2 class="display-2 mb-4">Pomáháme lidem podnikat</h2>
+    <h2 class="display-2 mb-4"><?= get_field('mission_title', 'option'); ?></h2>
   </div>
   <div class="container container-narrow">
     <p class="lead">
-      Díky Shoptetu si tisíce lidí plní sny o&nbsp;podnikání. Pomáháme drobným prodejcům i&nbsp;známým
-      značkám uspět ve světě e-commerce. Máme smysluplný produkt a&nbsp;špičkovou zákaznickou péči.
+      <?= get_field('mission_subtitle', 'option'); ?>
     </p>
   </div>
 </div>
 
-<div class="text-center" id="prace-v-shoptetu">
+<div class="text-center" id="work-in-shoptet">
 
   <div class="container-media">
     <div class="billboard">
@@ -43,22 +42,21 @@
         </div>
       </div>
       <div class="billboard-body mt-4 mt-md-0">
-        <h2 class="display-2 mb-0">Práce v Shoptetu</h2>
+        <h2 class="display-2 mb-0"><?= get_field('work_title', 'option'); ?></h2>
       </div>
     </div>
   </div>
 
   <div class="container container-narrow pt-4 pb-5">
     <p class="lead">
-      Je nás přes 200, rychle rosteme, ale zároveň si udržujeme pružnost bez těžkopádných procesů
-      a&nbsp;hierarchie. Flexibilní pracovní doba, home office nebo budget na vzdělávání jsou samozřejmost. 
+      <?= get_field('work_subtitle', 'option'); ?>
     </p>
   </div>
 
 </div>
 
 <div class="container">
-  <h2 class="display-2 text-center mb-0">Shoptet tvoříme dohromady</h2>
+  <h2 class="display-2 text-center mb-0"><?php _e('Shoptet tvoříme dohromady', 'shoptet-career'); ?></h2>
 </div>
 
 <div class="container py-3 mb-5">
@@ -100,7 +98,7 @@
 </div>
 <?php if ($blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864, 'exclude' => '21262,24824'])): ?>
   <div class="container">
-    <h2 class="display-2 text-center mb-0">Co je u nás nového?</h2>
+    <h2 class="display-2 text-center mb-0"><?php _e('Co je u nás nového?', 'shoptet-career'); ?></h2>
   </div>
   <div class="container py-3 mb-5">
     <div class="splide blog overflow">
@@ -124,7 +122,7 @@
                       <?= $post_array['excerpt']['rendered'] ?>
                     </div>
                     <div class="card-more-button text-center">
-                      <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank">Celý článek<i class="fas fa-arrow-right ml-2"></i></a>
+                      <a href="<?= $post_array['link'] ?>" class="link-body" target="_blank"><?php _e('Celý článek', 'shoptet-career'); ?><i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -141,7 +139,7 @@
 <?php if (is_array($gallery) && !empty($gallery)): ?>
   <div class="container pb-5" id="galerie">
     <div class="block bg-gray box-shadow">
-      <h2 class="display-2 text-center mb-3">Život v Shoptetu</h2>
+      <h2 class="display-2 text-center mb-3"><?php _e('Život v Shoptetu', 'shoptet-career'); ?></h2>
       <div id="gallery-slider" class="splide mb-2" itemscope itemtype="http://schema.org/ImageGallery">  
         <div class="splide__track">
           <div class="splide__list">
@@ -183,16 +181,16 @@
 <?php endif; ?>
 
 <?php if (is_callable(['JobOfferService', 'get_grouped_by_tax'])): ?>
-  <div class="container pb-5" id="volna-mista">
+  <div class="container pb-5" id="open-positions">
     <div class="block bg-gray box-shadow">
-      <h2 class="display-2 text-center mb-3">Aktuální volná místa</h2>
+      <h2 class="display-2 text-center mb-3"><?php _e('Aktuální volná místa', 'shoptet-career'); ?></h2>
       <?php
         $jobs_by_department = JobOfferService::get_grouped_by_tax('job_offer_department');
       ?>
       <div class="row">
         <div class="col-sm-6">
           <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-location">
-            <option value="" selected>Všechny lokality</option>
+            <option value="" selected><?php _e('Všechny lokality', 'shoptet-career'); ?></option>
             <?php
               $locations_all = get_terms(['taxonomy' => 'job_offer_location']);
               foreach($locations_all as $l) {
@@ -203,7 +201,7 @@
         </div>
         <div class="col-sm-6">
           <select class="custom-select custom-select-lg mb-2 mb-sm-3" id="job-list-filter-department">
-            <option value="" selected>Všechna oddělení</option>
+            <option value="" selected><?php _e('Všechna oddělení', 'shoptet-career'); ?></option>
             <?php
               $departments_all = get_terms(['taxonomy' => 'job_offer_department']);
               foreach($departments_all as $d) {
@@ -252,12 +250,11 @@
 <div class="py-4 bg-gray">
   <div class="py-2">
     <div class="container">
-      <h2 class="display-2 mb-3 text-center">Kontakt na HR</h2>
+      <h2 class="display-2 mb-3 text-center"><?php _e('Kontakt na HR', 'shoptet-career'); ?></h2>
     </div>
     <div class="container container-narrow">
       <p class="lead mb-4 text-center">
-        Nenašli jste svoji pozici ale máte zájem se k nám přidat? 
-        Máte otázku? Napište nám, rádi vám odpovíme.
+        <?php _e('Nenašli jste svoji pozici ale máte zájem se k nám přidat? Máte otázku? Napište nám, rádi vám odpovíme.', 'shoptet-career'); ?>
       </p>
     </div>
     <div class="container">

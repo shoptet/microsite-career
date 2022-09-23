@@ -40,7 +40,7 @@ $(function(){
     var term = $this.attr('data-job-filter-term');
     $('#job-list-filter-' + tax).val(term).trigger('change');
     $('html, body').animate({
-      scrollTop: $('#volna-mista').offset().top,
+      scrollTop: $('#open-positions').offset().top,
     }, 500);
   });
 

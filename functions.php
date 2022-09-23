@@ -6,6 +6,10 @@ define('SIMPLY_HEADER', true);
 
 add_action('acf/init', 'shoptet_acf_init');
 
+add_action('after_setup_theme', function() {
+  load_theme_textdomain('shoptet-career', get_template_directory() . '/src/languages');
+});
+
 add_filter('shp/custom_post_types', function($custom_post_types){
   $custom_post_types[] = 'job_offer';
   return $custom_post_types;
