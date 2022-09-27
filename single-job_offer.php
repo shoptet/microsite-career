@@ -47,7 +47,7 @@
         <h2 class="display-2 mb-1"><?php _e('Odpovědět na inzerát', 'shoptet-career'); ?></h2>
         <p class="lead"><?php _e('Obratem se ozveme zpět', 'shoptet-career'); ?></p>
       </div>
-      <?php get_template_part('src/template-parts/job_offer/content', 'application-form'); ?>
+      <?php do_action('shoptet_jobs_form'); ?>
     </div>
   </div>
 

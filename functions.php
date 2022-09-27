@@ -39,3 +39,10 @@ add_filter('the_content', function($content) {
   }
   return $content;
 });
+
+add_filter('privacy_policy_url', function($privacy_policy_url) {
+  if ($url = get_field('privacy_policy_url', 'option')) {
+    $privacy_policy_url = $url;
+  }
+  return $privacy_policy_url;
+});
