@@ -7,16 +7,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-09-23T14:29:47+00:00\n"
+"POT-Creation-Date: 2022-09-29T10:08:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: shoptet-career\n"
 
 #: homepage.php:8
 msgid "Všechna volná místa"
 msgstr ""
 
-#: homepage.php:59
+#: homepage.php:60
 msgid "Shoptet tvoříme dohromady"
 msgstr ""
 
@@ -62,64 +62,4 @@ msgstr ""
 
 #: single-job_offer.php:48
 msgid "Obratem se ozveme zpět"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:7
-msgid "Vaše jméno*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:8
-msgid "Celé jméno*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:12
-msgid "Váš e-mail*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:13
-msgid "E-mail*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:17
-msgid "Váš telefon*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:18
-msgid "Telefon*"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:22
-msgid "Průvodní dopis"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:23
-msgid "Zpráva"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:27
-msgid "LinkedIn profil"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:28
-msgid "Odkaz na LinkedIn profil"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:32
-msgid "Vaše CV"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:34
-msgid "Nahrajte prosím soubor typu PDF, DOC(X) nebo ODT"
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:43
-msgid "Vložením svého jména, kontaktního e-mailu a CV souhlasím se <a href=\"%s\" target=\"_blank\">zpracováním osobních údajů</a> společností Shoptet s.r.o. pro účely výběrového řízení."
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:51
-msgid "Odesílám..."
-msgstr ""
-
-#: template-parts/job_offer/content-application-form.php:51
-msgid "Odeslat odpověď"
 msgstr ""
