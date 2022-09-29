@@ -50,53 +50,59 @@ $(function(){
     customWrapper: '.parallax-wrapper',
   });
 
-  var splideFull = new Splide('.splide.full', {
-    gap: '1rem',
-  });
-  splideFull.mount();
-
-  var splideBlog = new Splide('.splide.blog', {
-    perPage: 3,
-    gap: '1rem',
-    pagination: false,
-    perMove: 1,
-    breakpoints: {
-      1199: {
-        perPage: 2,
-      },
-      767: {
-        perPage: 1,
-      },
-    }
-  });
-  splideBlog.mount();
-
-  var main = new Splide('#gallery-slider', {
-    rewind: true,
-    lazyLoad: 'nearby',
-    preloadPages: 2,
-  });
-
-  var thumbnails = new Splide('#gallery-thumbnail-slider', {
-    fixedWidth: 100,
-    fixedHeight: 100,
-    gap: '0.5rem',
-    pagination: false,
-    cover: true,
-    isNavigation: true,
-    focus: 'center',
-    type: 'loop',
-    arrows: false,
-    breakpoints : {
-      767: {
-        fixedWidth: 60,
-        fixedHeight: 60,
-      },
-    },
-  });
+  if (document.querySelector('.splide.full')) {
+    var splideFull = new Splide('.splide.full', {
+      gap: '1rem',
+    });
+    splideFull.mount();
+  }
   
-  main.sync(thumbnails);
-  main.mount();
-  thumbnails.mount();
+  if (document.querySelector('.splide.blog')) {
+    var splideBlog = new Splide('.splide.blog', {
+      perPage: 3,
+      gap: '1rem',
+      pagination: false,
+      perMove: 1,
+      breakpoints: {
+        1199: {
+          perPage: 2,
+        },
+        767: {
+          perPage: 1,
+        },
+      }
+    });
+    splideBlog.mount();
+  }
+
+  if (document.querySelector('#gallery-slider') && document.querySelector('#gallery-thumbnail-slider')) {
+    var main = new Splide('#gallery-slider', {
+      rewind: true,
+      lazyLoad: 'nearby',
+      preloadPages: 2,
+    });
+
+    var thumbnails = new Splide('#gallery-thumbnail-slider', {
+      fixedWidth: 100,
+      fixedHeight: 100,
+      gap: '0.5rem',
+      pagination: false,
+      cover: true,
+      isNavigation: true,
+      focus: 'center',
+      type: 'loop',
+      arrows: false,
+      breakpoints : {
+        767: {
+          fixedWidth: 60,
+          fixedHeight: 60,
+        },
+      },
+    });
+    
+    main.sync(thumbnails);
+    main.mount();
+    thumbnails.mount();
+  }
 
 });

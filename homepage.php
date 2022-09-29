@@ -55,48 +55,48 @@
 
 </div>
 
-<div class="container">
-  <h2 class="display-2 text-center mb-0"><?php _e('Shoptet tvoříme dohromady', 'shoptet-career'); ?></h2>
-</div>
-
-<div class="container py-3 mb-5">
-  <div class="splide full overflow">
-    <div class="splide__track">
-      <div class="splide__list">
-		
-        <?php while (have_rows('testimonials', 'option')): the_row(); ?>
-          <div class="splide__slide">
-            
-            <div class="bg-white h-100 rounded box-shadow">
-              <div class="row align-items-center no-gutters">
-                <div class="col-lg-6">
-                  <div class="display-img display-img-fix-vertical display-img-4-by-3">
-                    <?php
-                      $image = get_sub_field('image');
-                      echo wp_get_attachment_image($image, 'large');
-                    ?>
+<?php if (get_field('testimonials', 'option')): ?>
+  <div class="container">
+    <h2 class="display-2 text-center mb-0"><?php _e('Shoptet tvoříme dohromady', 'shoptet-career'); ?></h2>
+  </div>
+  <div class="container py-3 mb-5">
+    <div class="splide full overflow">
+      <div class="splide__track">
+        <div class="splide__list">
+      
+          <?php while (have_rows('testimonials', 'option')): the_row(); ?>
+            <div class="splide__slide">
+              
+              <div class="bg-white h-100 rounded box-shadow">
+                <div class="row align-items-center no-gutters">
+                  <div class="col-lg-6">
+                    <div class="display-img display-img-fix-vertical display-img-4-by-3">
+                      <?php
+                        $image = get_sub_field('image');
+                        echo wp_get_attachment_image($image, 'large');
+                      ?>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="p-2 pt-3 p-sm-3">
-                    <h2><?php the_sub_field('name'); ?></h2>
-                    <p class="font-weight-bold text-muted"><?php the_sub_field('position'); ?></p>
-                    <div class="fs-xl-125">
-                      <p><?php the_sub_field('text'); ?></p>
+                  <div class="col-lg-6">
+                    <div class="p-2 pt-3 p-sm-3">
+                      <h2><?php the_sub_field('name'); ?></h2>
+                      <p class="font-weight-bold text-muted"><?php the_sub_field('position'); ?></p>
+                      <div class="fs-xl-125">
+                        <p><?php the_sub_field('text'); ?></p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-          </div>
-        <?php endwhile; ?>
-
+          <?php endwhile; ?>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<?php if ($blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864, 'exclude' => '21262,24824'])): ?>
+<?php endif; ?>
+
+<?php if (get_field('show_blog_posts', 'option') && $blog_posts = Shoptet\ShoptetExternal::get_blog_posts(['_embed' => 1, 'categories' => 864, 'exclude' => '21262,24824'])): ?>
   <div class="container">
     <h2 class="display-2 text-center mb-0"><?php _e('Co je u nás nového?', 'shoptet-career'); ?></h2>
   </div>
