@@ -37,7 +37,7 @@
         <div class="parallax-wrapper">
           <?php
             $mission_image = get_field('mission_image', 'option');
-            echo wp_get_attachment_image($mission_image, 'large', false, ['class' => 'parallax']);
+            echo wp_get_attachment_image($mission_image, 'large', false, ['class' => 'parallax', 'sizes' => '100vw']);
           ?>
         </div>
       </div>
