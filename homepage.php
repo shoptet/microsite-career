@@ -249,7 +249,7 @@
 <div class="py-4 bg-gray">
   <div class="py-2">
     <div class="container">
-      <h2 class="display-2 mb-3 text-center"><?php _e('Kontakt na HR', 'shoptet-career'); ?></h2>
+      <h2 class="display-2 mb-3 text-center"><?php _e('Kontakt na People Team', 'shoptet-career'); ?></h2>
     </div>
     <div class="container container-narrow">
       <p class="lead mb-4 text-center">

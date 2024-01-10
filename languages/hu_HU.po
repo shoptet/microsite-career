@@ -47,7 +47,7 @@ msgid "Všechna oddělení"
 msgstr "Minden részleg"
 
 #: homepage.php:253
-msgid "Kontakt na HR"
+msgid "Kontakt na People Team"
 msgstr "HR elérhetőség"
 
 #: homepage.php:257

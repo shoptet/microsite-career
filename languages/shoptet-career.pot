@@ -45,7 +45,7 @@ msgid "Všechna oddělení"
 msgstr ""
 
 #: homepage.php:253
-msgid "Kontakt na HR"
+msgid "Kontakt na People Team"
 msgstr ""
 
 #: homepage.php:257
